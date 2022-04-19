@@ -1,0 +1,21 @@
+// 显示声明使用proto3, 否则使用默认的proto2
+syntax = "proto3";
+
+// 生成类的包名
+option java_package = "bean";
+
+option java_outer_classname = "RPC";
+
+message RpcRequest {
+  int64 requestId = 1;
+  string service = 2;
+  string method = 3;
+  bytes request = 4;
+}
+
+message RpcRespond {
+  int64 respondId = 1;
+  string service = 2;
+  string method = 3;
+  bytes response = 4;
+}
